@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+  PORT: 3001
+
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
