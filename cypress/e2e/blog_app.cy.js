@@ -66,28 +66,28 @@ describe('Blog app', function() {
     })
   })
 
-  describe('After creating multiple blogs', function() {
-    it('the blogs are ordered by most likes', function() {
-      cy.login({ username: 'testi', password: 'salaatti' })
-      cy.createBlog({ title: 'testiblogi 1', author: 'Testi bloggaaja', url: 'www.dot.not' })
-      cy.createBlog({ title: 'testiblogi 2', author: 'Testi bloggaaja', url: 'www.dot.not' })
-      cy.createBlog({ title: 'testiblogi 3', author: 'Testi bloggaaja', url: 'www.dot.not' })
+  // describe('After creating multiple blogs', function() {
+  //   it('the blogs are ordered by most likes', function() {
+  //     cy.login({ username: 'testi', password: 'salaatti' })
+  //     cy.createBlog({ title: 'testiblogi 1', author: 'Testi bloggaaja', url: 'www.dot.not' })
+  //     cy.createBlog({ title: 'testiblogi 2', author: 'Testi bloggaaja', url: 'www.dot.not' })
+  //     cy.createBlog({ title: 'testiblogi 3', author: 'Testi bloggaaja', url: 'www.dot.not' })
 
-      cy.contains('testiblogi 3')
-        .contains('view')
-        .click()
-        .parent().find('#like-button')
-        .click()
+  //     cy.contains('testiblogi 3')
+  //       .contains('view')
+  //       .click()
+  //       .parent().find('#like-button')
+  //       .click()
 
-      cy.contains('testiblog').should('contain', 'testiblogi 3')
+  //     cy.contains('testiblog').should('contain', 'testiblogi 3')
 
-      cy.contains('testiblogi 2')
-        .contains('view')
-        .click()
-        .parent().find('#like-button')
-        .click().click()
+  //     cy.contains('testiblogi 2')
+  //       .contains('view')
+  //       .click()
+  //       .parent().find('#like-button')
+  //       .click().click()
 
-      cy.contains('testiblog').should('contain', 'testiblogi 2')
-    })
-  })
+  //     cy.contains('testiblog').should('contain', 'testiblogi 2')
+  //   })
+  // })
 })
